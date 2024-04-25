@@ -13,13 +13,15 @@ public class HomeController {
     public ModelAndView index() {
 
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("home/index.html");
+        mv.setViewName("home/projeto-tarefas/index.html");
 
         return mv;
 
     }
 
-}
+} 
+
+
 
 
     
