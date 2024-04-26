@@ -11,6 +11,3 @@ public class HomeController {
         return "home/projeto-tarefas/index";
     }
 }
-
-
-

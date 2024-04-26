@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +23,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Estilos da primeira tela: projeto-tarefas */
 ul {
     list-style: none;
 }
@@ -97,5 +96,111 @@ a {
 .btn-voltar:hover {
     background-color: #7f8c8d;
     border-color: #7f8c8d;
+}
+
+/* Estilos da segunda tela: cadastrar-tarefa */
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Estilos da terceira tela: editar-tarefa */
+.btn-sim, .btn-nao {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-sim {
+    background-color: transparent;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+}
+
+.btn-sim:hover {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.btn-nao {
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.btn-nao:hover {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Estilos da quarta tela: excluir-tarefa */
+.btn-sim, .btn-nao {
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-sim {
+    background-color: transparent;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+}
+
+.btn-sim:hover {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.btn-nao {
+    background-color: transparent;
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+}
+
+.btn-nao:hover {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Estilos da quinta tela: visualizar-tarefa */
+p {
+    margin-bottom: 10px;
 }
 
