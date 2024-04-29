@@ -5,16 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .tarefa-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .tarefa-item .btn-group {
+            display: flex;
+            align-items: center;
+        }
+        .tarefa-item .btn-group a {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container" id="projeto-tarefas">
         <h1>Lista de Tarefas</h1>
         <ul id="lista-tarefas">
-            
-            <li th:each="tarefa : ${tarefas}" th:text="${tarefa.titulo}"></li>
+            <li th:each="tarefa : ${tarefas}" class="tarefa-item">
+                <span th:text="${tarefa.titulo}"></span>
+                <div class="btn-group">
+                    <a th:href="@{/visualizar-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-visualizar">Visualizar</a>
+                    <a th:href="@{/editar-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-editar">Editar</a>
+                    <a th:href="@{/excluir-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-excluir">Excluir</a>
+                </div>
+            </li>
         </ul>
         <a href="/cadastrar-tarefa" class="btn-voltar">Cadastrar Tarefa</a>
     </div>
-
 </body>
 </html>
