@@ -12,6 +12,13 @@
             justify-content: space-between;
             margin-bottom: 10px;
         }
+        .tarefa-item .tarefa-nome {
+            flex-grow: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
         .tarefa-item .btn-group {
             display: flex;
             align-items: center;
@@ -26,7 +33,7 @@
         <h1>Lista de Tarefas</h1>
         <ul id="lista-tarefas">
             <li th:each="tarefa : ${tarefas}" class="tarefa-item">
-                <span th:text="${tarefa.titulo}"></span>
+                <span class="tarefa-nome" th:text="${tarefa.titulo}"></span>
                 <div class="btn-group">
                     <a th:href="@{/visualizar-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-visualizar">Visualizar</a>
                     <a th:href="@{/editar-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-editar">Editar</a>
@@ -38,3 +45,4 @@
     </div>
 </body>
 </html>
+
