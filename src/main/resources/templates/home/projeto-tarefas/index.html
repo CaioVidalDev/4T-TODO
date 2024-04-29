@@ -35,9 +35,9 @@
             <li th:each="tarefa : ${tarefas}" class="tarefa-item">
                 <span class="tarefa-nome" th:text="${tarefa.titulo}"></span>
                 <div class="btn-group">
-                    <a th:href="@{/visualizar-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-visualizar">Visualizar</a>
-                    <a th:href="@{/editar-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-editar">Editar</a>
-                    <a th:href="@{/excluir-tarefa/{index}(index=${__${tarefas.indexOf(tarefa)}__})}" class="btn-excluir">Excluir</a>
+                    <a th:href="@{'/visualizar-tarefa/' + ${tarefas.indexOf(tarefa)}}" class="btn-visualizar">Visualizar</a>
+                    <a th:href="@{'/editar-tarefa/' + ${tarefas.indexOf(tarefa)}}" class="btn-editar">Editar</a>
+                    <a th:href="@{'/excluir-tarefa/' + ${tarefas.indexOf(tarefa)}}" class="btn-excluir">Excluir</a>
                 </div>
             </li>
         </ul>
