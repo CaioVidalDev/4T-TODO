@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de Tarefas</title>
+    <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <!-- primeira tela: projeto-tarefas -->
     <div class="container" id="projeto-tarefas">
-        <h1>Listagem de Tarefas</h1>
+        <h1>Lista de Tarefas</h1>
         <ul id="lista-tarefas">
             
             <li th:each="tarefa : ${tarefas}" th:text="${tarefa.titulo}"></li>
@@ -17,43 +16,5 @@
         <a href="/cadastrar-tarefa" class="btn-voltar">Cadastrar Tarefa</a>
     </div>
 
-    <!-- segunda tela: cadastrar-tarefa -->
-    <div class="container" id="cadastrar-tarefa" style="display: none;">
-        <h1>Cadastrar Tarefa</h1>
-        <form action="/cadastrar-tarefa" method="post">
-            <label for="titulo-cadastro">Título da Tarefa:</label>
-            <input type="text" id="titulo-cadastro" name="titulo" required>
-            <button type="submit">Salvar</button>
-        </form>
-        <a href="/" class="btn-voltar">Voltar</a>
-    </div>
-
-    <!-- terceira tela: editar-tarefa -->
-    <div class="container" id="editar-tarefa" style="display: none;">
-        <h1>Editar Tarefa</h1>
-        <form action="/editar-tarefa" method="post">
-            <label for="titulo-editar">Novo Título da Tarefa:</label>
-            <input type="text" id="titulo-editar" name="titulo" required>
-            <button type="submit">Salvar Alterações</button>
-        </form>
-        <a href="/" class="btn-voltar">Voltar</a>
-    </div>
-
-    <!-- quarta tela: excluir-tarefa -->
-    <div class="container" id="excluir-tarefa" style="display: none;">
-        <h1>Excluir Tarefa</h1>
-        <p>Tem certeza que deseja excluir a tarefa: <span th:text="${titulo}"></span>?</p>
-        <form action="/excluir-tarefa" method="post">
-            <button class="btn-sim" type="submit">Sim</button>
-            <a href="/" class="btn-nao">Não</a>
-        </form>
-    </div>
-
-    <!-- quinta tela: visualizar-tarefa -->
-    <div class="container" id="visualizar-tarefa" style="display: none;">
-        <h1>Visualizar Tarefa</h1>
-        <p>Título: <span th:text="${titulo}"></span></p>
-        <a href="/" class="btn-voltar">Voltar</a>
-    </div>
 </body>
 </html>
