@@ -11,8 +11,8 @@
     <div class="container" id="projeto-tarefas">
         <h1>Listagem de Tarefas</h1>
         <ul id="lista-tarefas">
-            <!-- Aqui serão listadas as tarefas dinamicamente pelo Thymeleaf -->
-            <li th:each="tarefa : ${tarefas}" th:text="${tarefa}"></li>
+            
+            <li th:each="tarefa : ${tarefas}" th:text="${tarefa.titulo}"></li>
         </ul>
         <a href="/cadastrar-tarefa" class="btn-voltar">Cadastrar Tarefa</a>
     </div>
@@ -23,11 +23,9 @@
         <form action="/cadastrar-tarefa" method="post">
             <label for="titulo-cadastro">Título da Tarefa:</label>
             <input type="text" id="titulo-cadastro" name="titulo" required>
-            <span class="error-message" id="error-message-cadastro" style="display: none;">Título é obrigatório</span>
-            <span class="success-message" id="success-message-cadastro" style="display: none;">Tarefa cadastrada com sucesso!</span>
             <button type="submit">Salvar</button>
         </form>
-        <a href="#" onclick="showTela('projeto-tarefas');" class="btn-voltar">Voltar</a>
+        <a href="/" class="btn-voltar">Voltar</a>
     </div>
 
     <!-- terceira tela: editar-tarefa -->
@@ -36,28 +34,26 @@
         <form action="/editar-tarefa" method="post">
             <label for="titulo-editar">Novo Título da Tarefa:</label>
             <input type="text" id="titulo-editar" name="titulo" required>
-            <span class="error-message" id="error-message-editar" style="display: none;">Título é obrigatório</span>
-            <span class="success-message" id="success-message-editar" style="display: none;">Tarefa editada com sucesso!</span>
             <button type="submit">Salvar Alterações</button>
         </form>
-        <a href="#" onclick="showTela('projeto-tarefas');" class="btn-voltar">Voltar</a>
+        <a href="/" class="btn-voltar">Voltar</a>
     </div>
 
     <!-- quarta tela: excluir-tarefa -->
     <div class="container" id="excluir-tarefa" style="display: none;">
         <h1>Excluir Tarefa</h1>
-        <p>Tem certeza que deseja excluir a tarefa: <span id="titulo-tarefa"></span>?</p>
+        <p>Tem certeza que deseja excluir a tarefa: <span th:text="${titulo}"></span>?</p>
         <form action="/excluir-tarefa" method="post">
             <button class="btn-sim" type="submit">Sim</button>
-            <a href="#" onclick="showTela('projeto-tarefas');" class="btn-nao">Não</a>
+            <a href="/" class="btn-nao">Não</a>
         </form>
     </div>
 
     <!-- quinta tela: visualizar-tarefa -->
     <div class="container" id="visualizar-tarefa" style="display: none;">
         <h1>Visualizar Tarefa</h1>
-        <p>Título: <span id="titulo-tarefa-visualizacao"></span></p>
-        <a href="#" onclick="showTela('projeto-tarefas');" class="btn-voltar">Voltar</a>
+        <p>Título: <span th:text="${titulo}"></span></p>
+        <a href="/" class="btn-voltar">Voltar</a>
     </div>
 </body>
 </html>
