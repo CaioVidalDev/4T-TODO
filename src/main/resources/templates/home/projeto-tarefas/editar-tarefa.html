@@ -10,11 +10,14 @@
     <div class="container" id="editar-tarefa">
         <h1>Editar Tarefa</h1>
         <form action="/editar-tarefa" method="post">
+            <label for="titulo-atual">Título Atual da Tarefa:</label>
+            <input type="text" id="titulo-atual" name="tituloAtual" th:value="${titulo}" readonly>
             <label for="titulo-editar">Novo Título da Tarefa:</label>
             <input type="text" id="titulo-editar" name="titulo" required>
             <button type="submit">Salvar Alterações</button>
         </form>
         <a href="/" class="btn-voltar">Voltar</a>
     </div>
+</body>
 </html>
 
