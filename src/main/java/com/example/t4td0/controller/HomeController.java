@@ -1,19 +1,23 @@
 package com.example.t4td0.controller;
 
 import com.example.t4td0.model.Tarefa;
+import com.example.t4td0.repository.TarefaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Controller
 public class HomeController {
-    private List<Tarefa> tarefas = new ArrayList<>();
-    private int tarefaIndexToEdit;
+
+    @Autowired
+    private TarefaRepository tarefaRepository;
 
     @GetMapping("/")
     public String index(Model model) {
+        List<Tarefa> tarefas = tarefaRepository.findAll();
         model.addAttribute("tarefas", tarefas);
         return "home/projeto-tarefas/index";
     }
@@ -26,16 +30,17 @@ public class HomeController {
     @PostMapping("/cadastrar-tarefa")
     public String cadastrarTarefa(@RequestParam("titulo") String titulo) {
         if (!titulo.trim().isEmpty()) {
-            tarefas.add(new Tarefa(titulo));
+            Tarefa novaTarefa = new Tarefa(titulo);
+            tarefaRepository.save(novaTarefa);
         }
         return "redirect:/";
     }
 
-    @GetMapping("/editar-tarefa/{index}")
-    public String preencherFormularioEdicao(@PathVariable("index") int index, Model model) {
-        if (index >= 0 && index < tarefas.size()) {
-            model.addAttribute("titulo", tarefas.get(index).getTitulo());
-            tarefaIndexToEdit = index;
+    @GetMapping("/editar-tarefa/{id}")
+    public String preencherFormularioEdicao(@PathVariable("id") Long id, Model model) {
+        Tarefa tarefa = tarefaRepository.findById(id).orElse(null);
+        if (tarefa != null) {
+            model.addAttribute("tarefa", tarefa);
             return "home/projeto-tarefas/editar-tarefa";
         } else {
             return "redirect:/";
@@ -43,18 +48,18 @@ public class HomeController {
     }
 
     @PostMapping("/editar-tarefa")
-    public String editarTarefa(@RequestParam("titulo") String novoTitulo, Model model) {
-        if (tarefaIndexToEdit >= 0 && tarefaIndexToEdit < tarefas.size() && !novoTitulo.trim().isEmpty()) {
-            tarefas.get(tarefaIndexToEdit).setTitulo(novoTitulo);
+    public String editarTarefa(@ModelAttribute("tarefa") Tarefa tarefa) {
+        if (tarefa != null) {
+            tarefaRepository.save(tarefa);
         }
         return "redirect:/";
     }
 
-    @GetMapping("/excluir-tarefa/{index}")
-    public String preencherFormularioExclusao(@PathVariable("index") int index, Model model) {
-        if (index >= 0 && index < tarefas.size()) {
-            model.addAttribute("titulo", tarefas.get(index).getTitulo());
-            tarefaIndexToEdit = index;
+    @GetMapping("/excluir-tarefa/{id}")
+    public String preencherFormularioExclusao(@PathVariable("id") Long id, Model model) {
+        Tarefa tarefa = tarefaRepository.findById(id).orElse(null);
+        if (tarefa != null) {
+            model.addAttribute("tarefa", tarefa);
             return "home/projeto-tarefas/excluir-tarefa";
         } else {
             return "redirect:/";
@@ -62,21 +67,19 @@ public class HomeController {
     }
 
     @PostMapping("/excluir-tarefa")
-    public String excluirTarefa() {
-        if (tarefaIndexToEdit >= 0 && tarefaIndexToEdit < tarefas.size()) {
-            tarefas.remove(tarefaIndexToEdit);
-        }
+    public String excluirTarefa(@RequestParam("id") Long id) {
+        tarefaRepository.deleteById(id);
         return "redirect:/";
     }
 
-    @GetMapping("/visualizar-tarefa/{index}")
-    public String preencherFormularioVisualizacao(@PathVariable("index") int index, Model model) {
-        if (index >= 0 && index < tarefas.size()) {
-            model.addAttribute("titulo", tarefas.get(index).getTitulo());
+    @GetMapping("/visualizar-tarefa/{id}")
+    public String preencherFormularioVisualizacao(@PathVariable("id") Long id, Model model) {
+        Tarefa tarefa = tarefaRepository.findById(id).orElse(null);
+        if (tarefa != null) {
+            model.addAttribute("tarefa", tarefa);
             return "home/projeto-tarefas/visualizar-tarefa";
         } else {
             return "redirect:/";
         }
     }
 }
-
