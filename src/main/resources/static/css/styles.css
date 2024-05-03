@@ -23,7 +23,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* primeira tela: projeto-tarefas */
+/* projeto-tarefas */
 ul {
     list-style: none;
 }
@@ -98,7 +98,7 @@ a {
     border-color: #7f8c8d;
 }
 
-/* segunda tela: cadastrar-tarefa */
+/* cadastrar-tarefa */
 form label {
     display: block;
     margin-bottom: 5px;
@@ -137,7 +137,7 @@ form button:hover {
     color: #fff;
 }
 
-/* terceira tela: editar-tarefa */
+/* editar-tarefa */
 .btn-sim, .btn-nao {
     padding: 8px 16px;
     margin-right: 10px;
@@ -168,7 +168,7 @@ form button:hover {
     color: #fff;
 }
 
-/* quarta tela: excluir-tarefa */
+/* excluir-tarefa */
 .btn-sim, .btn-nao {
     padding: 8px 16px;
     margin-right: 10px;
@@ -199,7 +199,7 @@ form button:hover {
     color: #fff;
 }
 
-/* quinta tela: visualizar-tarefa */
+/* visualizar-tarefa */
 p {
     margin-bottom: 10px;
 }
