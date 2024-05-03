@@ -23,15 +23,15 @@ public class HomeController {
     }
 
     @GetMapping("/cadastrar-tarefa")
-    public String cadastrarTarefaPage() {
+    public String cadastrarTarefaPage(Model model) {
+        model.addAttribute("tarefa", new Tarefa());
         return "home/projeto-tarefas/cadastrar-tarefa";
     }
 
     @PostMapping("/cadastrar-tarefa")
-    public String cadastrarTarefa(@RequestParam("titulo") String titulo) {
-        if (!titulo.trim().isEmpty()) {
-            Tarefa novaTarefa = new Tarefa(titulo);
-            tarefaRepository.save(novaTarefa);
+    public String cadastrarTarefa(@ModelAttribute Tarefa tarefa) {
+        if (tarefa != null && tarefa.getTitulo() != null && !tarefa.getTitulo().isEmpty()) {
+            tarefaRepository.save(tarefa);
         }
         return "redirect:/";
     }
@@ -48,7 +48,7 @@ public class HomeController {
     }
 
     @PostMapping("/editar-tarefa")
-    public String editarTarefa(@ModelAttribute("tarefa") Tarefa tarefa) {
+    public String editarTarefa(@ModelAttribute Tarefa tarefa) {
         if (tarefa != null) {
             tarefaRepository.save(tarefa);
         }
@@ -83,3 +83,5 @@ public class HomeController {
         }
     }
 }
+
+
