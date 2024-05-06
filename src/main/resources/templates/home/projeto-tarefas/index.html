@@ -26,11 +26,19 @@
         .tarefa-item .btn-group a {
             margin-right: 10px;
         }
+        .mensagem-exclusao {
+            font-weight: bold;
+            color: red;
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container" id="projeto-tarefas">
         <h1>Lista de Tarefas</h1>
+        <div th:if="${exclusaoSucesso}" class="mensagem-exclusao">
+            Tarefa excluída com sucesso!
+        </div>
         <ul id="lista-tarefas">
             <li th:each="tarefa : ${tarefas}" class="tarefa-item">
                 <span class="tarefa-nome" th:text="${tarefa.titulo}"></span>
@@ -45,4 +53,5 @@
     </div>
 </body>
 </html>
+
 

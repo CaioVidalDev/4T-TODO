@@ -16,6 +16,10 @@
             resize: none;
             overflow-x: auto;
         }
+        .mensagem {
+            color: green;
+        }
+
     </style>
 </head>
 <body>
@@ -29,8 +33,15 @@
             <input type="text" id="novo-titulo" name="titulo" placeholder="Novo Título da Tarefa" required>
             <button type="submit">Salvar Alterações</button>
         </form>
+
+
+        <div th:if="${edicaoSucesso}" class="mensagem">
+            Tarefa editada com sucesso!
+        </div>
+
         <a href="/tarefas" class="btn-voltar">Voltar</a>
     </div>
 </body>
 </html>
+
 

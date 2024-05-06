@@ -5,34 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Tarefas</title>
     <link rel="stylesheet" href="/css/styles.css">
-<style>
-   
-    #excluir-tarefa {
-        width: 80%;
-        max-height: 80%;
-        overflow-y: auto;
-        text-align: center;
-    }
+    <style>
+        #excluir-tarefa {
+            width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            text-align: center;
+        }
 
-    #excluir-tarefa p {
-        white-space: pre-wrap;
-        word-wrap: break-word;
-    }
-</style>
+        #excluir-tarefa p {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .mensagem-exclusao {
+            font-weight: bold;
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container" id="excluir-tarefa">
         <h1>Excluir Tarefa</h1>
-        <form action="/tarefas/destroy" method="post">
-            <p>Titulo: <span th:text="${tarefa.titulo}"></span></p>
+        <form th:action="@{'/tarefas/' + ${tarefa.id} + '/destroy'}" method="post">
+            <p>Título: <span th:text="${tarefa.titulo}"></span></p>
             <input type="hidden" id="id" name="id" th:value="${tarefa.id}">
-            <p>Tem certeza que deseja exluir a tarefa?</p>
+            <p>Tem certeza que deseja excluir a tarefa?</p>
             <button class="btn-sim" type="submit">Sim</button>
             <a href="/tarefas" class="btn-nao">Não</a>
         </form>
-        <div th:if="${exclusaoSucesso}" class="mensagem-sucesso">
-            tarefa excluida com sucesso!
-        </div>
+    </div>
+
+    <div th:if="${exclusaoSucesso}" class="mensagem-exclusao">
+        Tarefa excluída com sucesso!
     </div>
 </body>
 </html>

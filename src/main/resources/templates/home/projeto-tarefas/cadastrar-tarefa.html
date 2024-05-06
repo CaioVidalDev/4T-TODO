@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Tarefas</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .mensagem {
+            color: green;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,6 +19,10 @@
             <input type="text" id="titulo-cadastro" name="titulo" required>
             <button type="submit">Salvar</button>
         </form>
+       
+        <div th:if="${cadastroSucesso}" class="mensagem">
+            Tarefa cadastrada com sucesso!
+        </div>
         <a href="/tarefas" class="btn-voltar">Voltar</a>
     </div>
 </body>
