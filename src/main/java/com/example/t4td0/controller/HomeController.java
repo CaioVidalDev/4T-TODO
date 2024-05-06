@@ -10,76 +10,77 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping("/tarefas")
 public class HomeController {
 
     @Autowired
     private TarefaRepository tarefaRepository;
 
-    @GetMapping("/")
+    @GetMapping
     public String index(Model model) {
         List<Tarefa> tarefas = tarefaRepository.findAll();
         model.addAttribute("tarefas", tarefas);
         return "home/projeto-tarefas/index";
     }
 
-    @GetMapping("/cadastrar-tarefa")
+    @GetMapping("/new")
     public String cadastrarTarefaPage(Model model) {
         model.addAttribute("tarefa", new Tarefa());
         return "home/projeto-tarefas/cadastrar-tarefa";
     }
 
-    @PostMapping("/cadastrar-tarefa")
+    @PostMapping("/new")
     public String cadastrarTarefa(@ModelAttribute Tarefa tarefa) {
         if (tarefa != null && tarefa.getTitulo() != null && !tarefa.getTitulo().isEmpty()) {
             tarefaRepository.save(tarefa);
         }
-        return "redirect:/";
+        return "redirect:/tarefas";
     }
 
-    @GetMapping("/editar-tarefa/{id}")
+    @GetMapping("/{id}/edit")
     public String preencherFormularioEdicao(@PathVariable("id") Long id, Model model) {
         Tarefa tarefa = tarefaRepository.findById(id).orElse(null);
         if (tarefa != null) {
             model.addAttribute("tarefa", tarefa);
             return "home/projeto-tarefas/editar-tarefa";
         } else {
-            return "redirect:/";
+            return "redirect:/tarefas";
         }
     }
 
-    @PostMapping("/editar-tarefa")
+    @PostMapping("/edit")
     public String editarTarefa(@ModelAttribute Tarefa tarefa) {
         if (tarefa != null) {
             tarefaRepository.save(tarefa);
         }
-        return "redirect:/";
+        return "redirect:/tarefas";
     }
 
-    @GetMapping("/excluir-tarefa/{id}")
+    @GetMapping("/{id}/destroy")
     public String preencherFormularioExclusao(@PathVariable("id") Long id, Model model) {
         Tarefa tarefa = tarefaRepository.findById(id).orElse(null);
         if (tarefa != null) {
             model.addAttribute("tarefa", tarefa);
             return "home/projeto-tarefas/excluir-tarefa";
         } else {
-            return "redirect:/";
+            return "redirect:/tarefas";
         }
     }
 
-    @PostMapping("/excluir-tarefa")
+    @PostMapping("/destroy")
     public String excluirTarefa(@RequestParam("id") Long id) {
         tarefaRepository.deleteById(id);
-        return "redirect:/";
+        return "redirect:/tarefas";
     }
 
-    @GetMapping("/visualizar-tarefa/{id}")
+    @GetMapping("/{id}")
     public String preencherFormularioVisualizacao(@PathVariable("id") Long id, Model model) {
         Tarefa tarefa = tarefaRepository.findById(id).orElse(null);
         if (tarefa != null) {
             model.addAttribute("tarefa", tarefa);
             return "home/projeto-tarefas/visualizar-tarefa";
         } else {
-            return "redirect:/";
+            return "redirect:/tarefas";
         }
     }
 }

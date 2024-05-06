@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Tarefas</title>
+    <link rel="stylesheet" href="/css/styles.css">
 <style>
    
     #excluir-tarefa {
@@ -14,22 +19,20 @@
         word-wrap: break-word;
     }
 </style>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excluir Tarefas</title>
-    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <div class="container" id="excluir-tarefa">
         <h1>Excluir Tarefa</h1>
-        <p>Tem certeza que deseja excluir a tarefa: <span th:text="${tarefa.titulo}"></span>?</p>
-        <form action="/excluir-tarefa" method="post">
+        <form action="/tarefas/destroy" method="post">
+            <p>Titulo: <span th:text="${tarefa.titulo}"></span></p>
             <input type="hidden" id="id" name="id" th:value="${tarefa.id}">
+            <p>Tem certeza que deseja exluir a tarefa?</p>
             <button class="btn-sim" type="submit">Sim</button>
-            <a href="/" class="btn-nao">Não</a>
+            <a href="/tarefas" class="btn-nao">Não</a>
         </form>
+        <div th:if="${exclusaoSucesso}" class="mensagem-sucesso">
+            tarefa excluida com sucesso!
+        </div>
     </div>
 </body>
 </html>

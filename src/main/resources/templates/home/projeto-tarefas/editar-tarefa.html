@@ -21,7 +21,7 @@
 <body>
     <div class="container" id="editar-tarefa">
         <h1>Editar Tarefa</h1>
-        <form action="/editar-tarefa" method="post">
+        <form action="/tarefas/edit" method="post">
             <label for="titulo-atual">Título Atual da Tarefa:</label>
             <textarea id="titulo-atual" name="tituloAtual" readonly th:text="${tarefa.titulo}"></textarea>
             <label for="novo-titulo">Novo Título da Tarefa:</label>
@@ -29,7 +29,7 @@
             <input type="text" id="novo-titulo" name="titulo" placeholder="Novo Título da Tarefa" required>
             <button type="submit">Salvar Alterações</button>
         </form>
-        <a href="/" class="btn-voltar">Voltar</a>
+        <a href="/tarefas" class="btn-voltar">Voltar</a>
     </div>
 </body>
 </html>

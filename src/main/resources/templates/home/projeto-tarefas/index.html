@@ -35,13 +35,13 @@
             <li th:each="tarefa : ${tarefas}" class="tarefa-item">
                 <span class="tarefa-nome" th:text="${tarefa.titulo}"></span>
                 <div class="btn-group">
-                    <a th:href="@{'/visualizar-tarefa/' + ${tarefa.id}}" class="btn-visualizar">Visualizar</a>
-                    <a th:href="@{'/editar-tarefa/' + ${tarefa.id}}" class="btn-editar">Editar</a>
-                    <a th:href="@{'/excluir-tarefa/' + ${tarefa.id}}" class="btn-excluir">Excluir</a>
+                    <a th:href="@{'/tarefas/' + ${tarefa.id}}" class="btn-visualizar">Visualizar</a>
+                    <a th:href="@{'/tarefas/' + ${tarefa.id} + '/edit'}" class="btn-editar">Editar</a>
+                    <a th:href="@{'/tarefas/' + ${tarefa.id} + '/destroy'}" class="btn-excluir">Excluir</a>
                 </div>
             </li>
         </ul>
-        <a href="/cadastrar-tarefa" class="btn-voltar">Cadastrar Tarefa</a>
+        <a href="/tarefas/new" class="btn-voltar">Cadastrar Tarefa</a>
     </div>
 </body>
 </html>
