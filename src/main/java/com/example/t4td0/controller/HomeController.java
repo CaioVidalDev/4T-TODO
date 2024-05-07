@@ -65,11 +65,12 @@ public class HomeController {
     }
 
     @PostMapping("/edit")
-    public String editarTarefa(@ModelAttribute Tarefa tarefa, RedirectAttributes redirectAttributes) {
-        if (tarefa != null) {
-            tarefaRepository.save(tarefa);
-            redirectAttributes.addFlashAttribute("edicaoSucesso", true);
+    public String editarTarefa(@Validated @ModelAttribute Tarefa tarefa, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            return "home/projeto-tarefas/editar-tarefa";
         }
+        tarefaRepository.save(tarefa);
+        redirectAttributes.addFlashAttribute("edicaoSucesso", true);
         return "redirect:/tarefas/" + tarefa.getId() + "/edit";
     }
 
