@@ -89,7 +89,7 @@ public class HomeController {
     public String excluirTarefa(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         tarefaRepository.deleteById(id);
         redirectAttributes.addFlashAttribute("exclusaoSucesso", true);
-        return "redirect:/tarefas/" + id + "/destroy";
+        return "redirect:/tarefas";
     }
 
     @GetMapping("/{id}")
