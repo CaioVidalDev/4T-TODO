@@ -9,14 +9,20 @@
         .mensagem {
             color: green;
         }
+        .error-message {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Cadastrar Tarefa</h1>
-        <form action="/tarefas/new" method="post">
+        <form action="/tarefas/new" method="post" th:object="${tarefa}">
             <label for="titulo-cadastro">Título da Tarefa:</label>
-            <input type="text" id="titulo-cadastro" name="titulo" required>
+            <input type="text" id="titulo-cadastro" name="titulo" th:field="*{titulo}">
+            <div th:if="${#fields.hasErrors('titulo')}" class="error-message" th:errors="*{titulo}">
+                Título é obrigatório
+            </div>
             <button type="submit">Salvar</button>
         </form>
        
@@ -27,3 +33,4 @@
     </div>
 </body>
 </html>
+

@@ -2,9 +2,13 @@ package com.example.t4td0.controller;
 
 import com.example.t4td0.model.Tarefa;
 import com.example.t4td0.repository.TarefaRepository;
+import com.example.t4td0.validator.TarefaValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -17,6 +21,14 @@ public class HomeController {
 
     @Autowired
     private TarefaRepository tarefaRepository;
+
+    @Autowired
+    private TarefaValidator tarefaValidator;
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(tarefaValidator);
+    }
 
     @GetMapping
     public String listarTarefas(Model model) {
@@ -32,11 +44,12 @@ public class HomeController {
     }
 
     @PostMapping("/new")
-    public String cadastrarTarefa(@ModelAttribute Tarefa tarefa, RedirectAttributes redirectAttributes) {
-        if (tarefa != null && tarefa.getTitulo() != null && !tarefa.getTitulo().isEmpty()) {
-            tarefaRepository.save(tarefa);
-            redirectAttributes.addFlashAttribute("cadastroSucesso", true);
+    public String cadastrarTarefa(@Validated @ModelAttribute Tarefa tarefa, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            return "home/projeto-tarefas/cadastrar-tarefa";
         }
+        tarefaRepository.save(tarefa);
+        redirectAttributes.addFlashAttribute("cadastroSucesso", true);
         return "redirect:/tarefas/new";
     }
 
