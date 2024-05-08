@@ -184,7 +184,8 @@ $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sq
 
 ```bash
 
-# Apos seguir o passo a passo e inicar o Spring Boot no terminal
+# Apos seguir o passo a passo e inicar o Spring Boot no terminal executando o comando 
+$ mvn spring-boot:run
 
 # Abra seu navegador 
 
