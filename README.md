@@ -9,8 +9,8 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 <p align="center">
   <img alt="4t" title="4t" src="assets/4t.png" width="100px">
 </p>
----
 
+---
 ## ⚙️ Fucionalidades
 
 
@@ -115,15 +115,10 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 - **java adoptopenjdk-21.0.1+12.0.LTS**
 - **maven 3.9.6**
-- **spring boot 3.2.5**
-- **sqlite-jdbc 3.36.0.1**
-- **dbeaver 24.0.4**
 
-
-
-Instale as versões acima para executar o projeto
 ---
 
+Instale as versões acima para executar o projeto
 ---
 
 #### Iniciando o Backend (terminal)
@@ -149,8 +144,8 @@ $ mvn spring-boot:run
 <p align="center">
   <img alt="run" title="run" src="assets/run.png" width="100px">
 </p>
----
 
+---
 #### Iniciando e Parametrizando o Banco de Dados (sqlite e dbeaver)
 
 ```bash
@@ -167,7 +162,7 @@ $ mvn spring-boot:run
 
 # Abra seu editor de codigo no projeto t4td0
 
-# Entre na pasta application.properties 
+# Entre no arquivo application.properties 
 $ t4td0/src/main/resources/application.properties 
 
 # Altere o caminho do banco para o encontrado no dbeaver
@@ -178,8 +173,8 @@ $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sq
 <p align="center">
   <img alt="Dbeaver" title="run" src="assets/Dbeaver.png" width="100px">
 </p>
----
 
+---
 #### Iniciando a aplicação web (localhost)
 
 ```bash
@@ -196,12 +191,14 @@ $ mvn spring-boot:run
 <p align="center">
   <img alt="Localhost" title="Localhost" src="assets/Localhost.png" width="100px">
 </p>
----
 
+---
 ## 🛠 Testes Automatizados
 
----
 
+Testes
+
+---
 ## 📝 Autor 
 
 Feito por Caio Vidal [Entre em contato!](https://www.linkedin.com/in/caio-nobre-vidal-silva-23669b270/)
