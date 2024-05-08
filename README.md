@@ -197,7 +197,7 @@ $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sq
 </p>
 ---
 
-## 🛠 Tecnologias
+## 🛠 Testes Automatizados
 
 ---
 
