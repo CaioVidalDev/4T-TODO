@@ -3,7 +3,7 @@
 ## 💻 Sobre o projeto
 
 
-O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se familiarizarem com nosso fluxo de trabalho, a respeito de desenvolvimento de software. O **4T TODO** é uma aplicação voltada a listagem de tarefas. Ele permite realizar a listagem das tarefas, cadastro das tarefas, visualização das tarefas, edição das tarefas e exclusão das tarefas.
+O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se familiarizarem com nosso fluxo de trabalho, a respeito de desenvolvimento de software. O **4T TODO** é uma aplicação voltada a listagem de tarefas. Ele permite realizar a listagem das tarefas, cadastração , visualização , edição e exclusão das tarefas.
 
 ---
 <p align="center">
@@ -34,7 +34,6 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 
 ## 🎨 Layout
 
----
 
 ### Web
 
@@ -42,34 +41,36 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 <p align="center">
   <img alt="ListaInicial" title="ListaInicial" src="assets/ListaIncial.png" width="100px">
 </p>
----
+
 2. Cadastro de Tarefas
 <p align="center">
   <img alt="Cadastro" title="Cadastro" src="assets/Cadastro.png" width="100px">
 </p>
----
+
 3. Visualizar Tarefas
 <p align="center">
   <img alt="Visualizar" title="Visualizar" src="assets/Visualizar.png" width="100px">
 </p>
----
+
 4. Editar Tarefas
 <p align="center">
   <img alt="Editar" title="Editar" src="assets/Editar.png" width="100px">
 </p>
----
+
 5. Excluir Tarefas
 <p align="center">
   <img alt="Excluir" title="Excluir" src="assets/Excluir.png" width="100px">
 </p>
----
+
 6. Lista de Tarefas Cadastradas
 <p align="center">
   <img alt="ListaDeTarefasCompleta" title="ListaDeTarefasCompleta" src="assets/ListaDeTarefasCompleta.png" width="100px">
 </p>
+
 ---
 
 ## 🛠 Tecnologias
+
 
 - **Backend**:
     - **Java** com:
@@ -110,7 +111,7 @@ Este projeto é divido em três partes:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: Git,Dbeaver,SQLite . Além disto é bom ter um editor para trabalhar com o código como VSCode
 ---
 
----
+
 ### Versões
 
 - **java adoptopenjdk-21.0.1+12.0.LTS**
@@ -125,19 +126,20 @@ Instale as versões acima para executar o projeto
 
 ```bash
 
-# Crie a uma pasta em chamada t4td0
+# Crie uma pasta em chamada t4td0
 $ mkdir t4td0
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd t4td0
 
 # Clone este repositório
-$ git clone git@github.com:cubos-academy/academy-template-readme-projects.git
+$ SSH: git clone git@bitbucket.org:caio-vidal-silva/t4td0.git
+$ HTTPS: git clone https://caiovidal4t@bitbucket.org/caio-vidal-silva/t4td0.git
 
-# Execute o comando (Apos paarmetrização do Banco de Dados)
+# Execute o comando (Apos parametrização do Banco de Dados)
 $ mvn spring-boot:run
 
-# O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas/
+# O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas
 
 ```
 ---
@@ -152,7 +154,7 @@ $ mvn spring-boot:run
 
 #Instale a versão mais recente do SQLite
 
-#Instale a versão mais recente do Dbeaver
+#Instale a versão mais recente da ferramenta de gestão de bases de dados (Dbeaver)
 
 #Entre no Dbeaver, crie uma nova conexão e escolha banco SQLite
 
@@ -165,7 +167,7 @@ $ mvn spring-boot:run
 # Entre no arquivo application.properties 
 $ t4td0/src/main/resources/application.properties 
 
-# Altere o caminho do banco para o encontrado no dbeaver
+# Altere o caminho do banco 
 $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sqlite
 
 ```
@@ -184,7 +186,7 @@ $ mvn spring-boot:run
 
 # Abra seu navegador 
 
-# O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas/
+# O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas
 
 ```
 ---
