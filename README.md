@@ -203,7 +203,7 @@ $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sq
 
 ## 📝 Autor 
 
-Feito por Caio Vidal [Entre em contato!](https://www.linkedin.com/in/CaioNobreVidalSilva/)
+Feito por Caio Vidal [Entre em contato!](https://www.linkedin.com/in/caio-nobre-vidal-silva-23669b270/)
 
 
 
