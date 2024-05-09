@@ -38,7 +38,3 @@ class TarefaValidatorTest {
         assertFalse(errors.hasErrors());
     }
 }
-
-/* utilizar o maven para startar o teste */
-/* o teste precisa acessar a url, entrar no campo, colocar o nome e clicar
- no botão para realizar o teste e não criando uma variavel diretamente */
