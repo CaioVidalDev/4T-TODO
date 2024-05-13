@@ -23,10 +23,10 @@
             <div th:if="${#fields.hasErrors('titulo')}" class="error-message" th:errors="*{titulo}">
                 Título é obrigatório
             </div>
-            <button type="submit">Salvar</button>
+            <button id= "salvarCadastro" type="submit">Salvar</button>
         </form>
        
-        <div th:if="${cadastroSucesso}" class="mensagem">
+        <div th:if="${cadastroSucesso}" id="mensagemCadastroSucess" class="mensagem">
             Tarefa cadastrada com sucesso!
         </div>
         <a href="/tarefas" class="btn-voltar">Voltar</a>
