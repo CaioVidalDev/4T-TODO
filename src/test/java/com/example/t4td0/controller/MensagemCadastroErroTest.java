@@ -8,10 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CadastroTest {
+public class MensagemCadastroErroTest {
 
     private static WebDriver driver;
 
@@ -34,26 +33,34 @@ public class CadastroTest {
 
        WebElement caixaDeBusca = driver.findElement(By.id("titulo-cadastro"));
        caixaDeBusca.click();
-       caixaDeBusca.sendKeys("Teste De Cadastrar");
+       caixaDeBusca.sendKeys("");
 
        WebElement salvarCadastro = driver.findElement(By.id("salvarCadastro"));
        salvarCadastro.click();
 
-       WebElement voltar = driver.findElement(By.className("btn-voltar"));
-       voltar.click();
-
-       /* Tarefa Cadastrada com Sucesso */
-       WebElement cadastroSucesso = driver.findElement(By.className("tarefa-nome"));
-       String TarefaCadastroSucess = cadastroSucesso.getText();
+       /* Mensagem de Erro de Cadastrado com Sucesso */
+       WebElement cadastroSucess = driver.findElement(By.id("mensagemErro"));
+       String mensagemCadastroSucess = cadastroSucess.getText();
        
-       if(TarefaCadastroSucess.contains("Teste De Cadastrar")) {
-        System.out.println("Teste de cadastrar tarefa realizado com sucesso");
-        }else{
-         System.out.println("Erro na Pesquisa");
-        }
+       if(mensagemCadastroSucess.contains("Título é obrigatório")) {
+       System.out.println("Teste de Mensagem de Erro de cadastro de tarefa realizado com sucesso");
+       }else{
+        System.out.println("Erro na Pesquisa");
+       }
 
-        /* Excluir Tarefa */
-        WebElement excluir = driver.findElement(By.className("btn-excluir"));
+       WebElement caixaDeBuscaNov = driver.findElement(By.id("titulo-cadastro"));
+       caixaDeBuscaNov.click();
+       caixaDeBuscaNov.sendKeys("Teste De Cadastrar");
+
+       WebElement salvarCadastroNov = driver.findElement(By.id("salvarCadastro"));
+       salvarCadastroNov.click();
+
+       WebElement voltarList = driver.findElement(By.className("btn-voltar"));
+       voltarList.click();
+
+       /* Excluir Tarefa */
+
+       WebElement excluir = driver.findElement(By.className("btn-excluir"));
        excluir.click();
 
        WebElement excluirSim = driver.findElement(By.className("btn-sim"));
@@ -63,3 +70,5 @@ public class CadastroTest {
 
     }
 }
+
+

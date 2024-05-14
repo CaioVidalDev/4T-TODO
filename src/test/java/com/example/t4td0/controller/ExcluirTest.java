@@ -8,10 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CadastroTest {
+public class ExcluirTest {
 
     private static WebDriver driver;
 
@@ -42,24 +41,25 @@ public class CadastroTest {
        WebElement voltar = driver.findElement(By.className("btn-voltar"));
        voltar.click();
 
-       /* Tarefa Cadastrada com Sucesso */
-       WebElement cadastroSucesso = driver.findElement(By.className("tarefa-nome"));
-       String TarefaCadastroSucess = cadastroSucesso.getText();
-       
-       if(TarefaCadastroSucess.contains("Teste De Cadastrar")) {
-        System.out.println("Teste de cadastrar tarefa realizado com sucesso");
-        }else{
-         System.out.println("Erro na Pesquisa");
-        }
-
-        /* Excluir Tarefa */
-        WebElement excluir = driver.findElement(By.className("btn-excluir"));
+       /* Excluir Tarefa */
+       WebElement excluir = driver.findElement(By.className("btn-excluir"));
        excluir.click();
 
        WebElement excluirSim = driver.findElement(By.className("btn-sim"));
        excluirSim.click();
 
+       /* Tarefa Exluida com Sucesso */
+       WebElement cadastroSucesso = driver.findElement(By.className("mensagem-exclusao"));
+       String TarefaCadastroSucess = cadastroSucesso.getText();
+       
+       if(TarefaCadastroSucess.contains("Tarefa excluída com sucesso!")) {
+        System.out.println("Teste de exclusao de tarefa realizado com sucesso");
+        }else{
+         System.out.println("Erro na Pesquisa");
+        }
+
        driver.close();
 
     }
+
 }

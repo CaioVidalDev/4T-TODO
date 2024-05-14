@@ -1,8 +1,6 @@
 package com.example.t4td0.controller;
 
 import java.util.concurrent.TimeUnit;
-
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -10,12 +8,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class MessagemCadastroTest {
-
+public class VisualizarTest {
+    
     private static WebDriver driver;
 
     @BeforeAll
@@ -25,6 +21,7 @@ public class MessagemCadastroTest {
         driver = new FirefoxDriver(options);
     }
 
+    @SuppressWarnings("deprecation")
     @Test
     public void testCadastroTarefa() {
         driver.get("http://localhost:8080/tarefas");
@@ -41,15 +38,33 @@ public class MessagemCadastroTest {
        WebElement salvarCadastro = driver.findElement(By.id("salvarCadastro"));
        salvarCadastro.click();
 
-       /* Mensagem de Cadastrado com Sucesso */
-       WebElement cadastroSucess = driver.findElement(By.id("mensagemCadastroSucess"));
-       String mensagemCadastroSucess = cadastroSucess.getText();
+       WebElement voltar = driver.findElement(By.className("btn-voltar"));
+       voltar.click();
+
+       /* Visualizar Tarefa */
+
+       WebElement visualizar = driver.findElement(By.className("btn-visualizar"));
+       visualizar.click();
+
+       WebElement cadastroSucesso = driver.findElement(By.id("visualizarTarefa"));
+       String TarefaCadastroSucess = cadastroSucesso.getText();
        
-       if(mensagemCadastroSucess.contains("Tarefa cadastrada com sucesso!")) {
-       System.out.println("Teste de Mensagem de cadastro de tarefa realizado com sucesso");
-       }else{
-        System.out.println("Erro na Pesquisa");
-       }
+       if(TarefaCadastroSucess.contains("Teste De Cadastrar")) {
+        System.out.println("Teste de visualizar tarefa realizado com sucesso");
+        }else{
+         System.out.println("Erro na Pesquisa");
+        }
+
+       WebElement voltarList = driver.findElement(By.className("btn-voltar"));
+       voltarList.click();
+
+      
+        /* Excluir Tarefa */
+        WebElement excluir = driver.findElement(By.className("btn-excluir"));
+       excluir.click();
+
+       WebElement excluirSim = driver.findElement(By.className("btn-sim"));
+       excluirSim.click();
 
        driver.close();
 

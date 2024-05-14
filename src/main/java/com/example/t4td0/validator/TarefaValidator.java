@@ -9,12 +9,12 @@ import org.springframework.validation.Validator;
 public class TarefaValidator implements Validator {
 
     @Override
-    public boolean supports(Class<?> clazz) {
+    public boolean supports(@SuppressWarnings("null") Class<?> clazz) {
         return Tarefa.class.equals(clazz);
     }
 
     @Override
-    public void validate(Object target, Errors errors) {
+    public void validate(@SuppressWarnings("null") Object target, @SuppressWarnings("null") Errors errors) {
         Tarefa tarefa = (Tarefa) target;
         if (tarefa.getTitulo() == null || tarefa.getTitulo().isEmpty()) {
             errors.rejectValue("titulo", "titulo.obrigatorio", "Título é obrigatório");

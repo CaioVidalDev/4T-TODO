@@ -20,7 +20,7 @@
         <form action="/tarefas/new" method="post" th:object="${tarefa}">
             <label for="titulo-cadastro">Título da Tarefa:</label>
             <input type="text" id="titulo-cadastro" name="titulo" th:field="*{titulo}">
-            <div th:if="${#fields.hasErrors('titulo')}" class="error-message" th:errors="*{titulo}">
+            <div th:if="${#fields.hasErrors('titulo')}" id="mensagemErro" class="error-message" th:errors="*{titulo}">
                 Título é obrigatório
             </div>
             <button id= "salvarCadastro" type="submit">Salvar</button>
