@@ -136,7 +136,7 @@ $ cd t4td0
 $ SSH: git clone git@bitbucket.org:caio-vidal-silva/t4td0.git
 $ HTTPS: git clone https://caiovidal4t@bitbucket.org/caio-vidal-silva/t4td0.git
 
-# Execute o comando (Apos parametrização do Banco de Dados)
+# Execute o comando no terminal (Apos parametrização do Banco de Dados)
 $ mvn spring-boot:run
 
 # O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas
@@ -197,8 +197,32 @@ $ mvn spring-boot:run
 ---
 ## 🛠 Testes Automatizados
 
+#### Iniciando Testes Automatizados (terminal)
+```bash
 
-Testes
+# Inicie seu terminal e execute o comando pata iniciar o Spring Boot
+$ mvn spring-boot:run
+
+# Inicie outra aba do terminal e execute o comando para iniciar os testes
+$ mvn test
+
+# Os testes automatizados serão realizados automaticamente 
+
+# Após término dos testes, será mostrado a resolução e o feedback de cada um dos testes individualmente, informando em texto se foi REALIZADO COM SUCESSO ou se ocorreu ERRO NA PESQUISA
+
+# No final da realização do testes automatizados é transmitido um relátorio informando:
+$ Iniciados
+$ Falhas
+$ Erros
+$ Ignorados
+$ Tempo Total 
+$ Data e Hora 
+```
+---
+
+<p align="center">
+  <img alt="Localhost" title="Localhost" src="assets/TestesAutomatizados.png" width="100px">
+</p>
 
 ---
 ## 📝 Autor 
