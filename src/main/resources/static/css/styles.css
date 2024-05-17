@@ -1,69 +1,72 @@
+/* Geral */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* margem */
+    padding: 0; /* gerar espaço */
+    box-sizing: border-box; /* inclusao de preenchimento e borda  */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: Arial, Helvetica, sans-serif; /* fonte familiar */
+    background-color: #f9f9f9; /* cor de fundo */
 }
 
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* largura máxima */
+    margin: 20px auto; /* margem */
+    padding: 20px; /* espaço */
+    background-color: #fff; /* cor de fundo */
+    border-radius: 5px; /* arredondar bordar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra */
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* alinhamento do texto */
+    margin-bottom: 20px; /* margem inferior */
 }
 
-/* projeto-tarefas */
+/* Lista de Tarefas */
+
 ul {
-    list-style: none;
+    list-style: none; /* lista de estilos */
 }
 
-li {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+li { /* campo tarefa */
+    padding: 10px; /* gerar espaço */
+    border: 1px solid #ddd; /* borda ao redor da tarefa */
+    margin-bottom: 10px; /* margem inferior */
+    display: flex;  /* elementos organizados corretamente */
+    justify-content: space-between; /* alinhar itens horizontal */
+    align-items: center; /* alinhar itens vertical */
 }
 
 a {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
+    text-decoration: none; /* decoração do texto */ /* tirar faixa inferior do link */
+    padding: 8px 16px; /* espaço */
+    border-radius: 5px; /* arredondar bordas */
+    font-weight: bold; /* fonte: negrito */
+    cursor: pointer; /* apontar o curso do mouse */
 }
 
 .btn-editar, .btn-excluir, .btn-visualizar {
-    background-color: transparent;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+    background-color: transparent; /* cor de fundo */
+    border: 2px solid transparent; /* borda */
+    transition: all 0.3s ease; /* transição */
 }
 
 .btn-editar {
-    color: #f39c12;
-    border-color: #f39c12;
+    color: #f39c12; /* cor do texto */
+    border-color: #f39c12; /* cor da borda */
 }
 
 .btn-editar:hover {
-    background-color: #f39c12;
-    color: #fff;
+    background-color: #f39c12; /* cor de fundo */
+    color: #fff; /* cor do texto */
 }
 
 .btn-excluir {
-    color: #e74c3c;
-    border-color: #e74c3c;
+    color: #e74c3c; 
+    border-color: #e74c3c; 
 }
 
 .btn-excluir:hover {
@@ -72,8 +75,8 @@ a {
 }
 
 .btn-visualizar {
-    color: #3498db;
-    border-color: #3498db;
+    color: #3498db; 
+    border-color: #3498db; 
 }
 
 .btn-visualizar:hover {
@@ -82,34 +85,35 @@ a {
 }
 
 .btn-voltar {
-    display: block;
-    margin-top: 20px;
-    text-align: center;
-    background-color: #95a5a6;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: 2px solid #95a5a6;
-    transition: all 0.3s ease;
+    display: block; /* elementos organizados corretamente */
+    margin-top: 20px; /* margem superior */
+    text-align: center; /* alinhar texto */
+    background-color: #95a5a6; /* cor de fundo */
+    color: #fff; /* cor do texto */
+    padding: 8px 16px; /* espaçamento */
+    border-radius: 5px; /* arredondamento da borda */
+    border: 2px solid #95a5a6; /* borda */
+    transition: all 0.3s ease; /* transição */
 }
 
 .btn-voltar:hover {
-    background-color: #7f8c8d;
-    border-color: #7f8c8d;
+    background-color: #7f8c8d; /* cor de fundo */
+    border-color: #7f8c8d; /* cor da borda */
 }
 
-/* cadastrar-tarefa */
+/* Cadastrar Tarefa */
+
 form label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* elementos organizados corretamente */
+    margin-bottom: 5px; /* margem inferior */
 }
 
 form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%; /* largura */
+    padding: 8px; /* espaço */
+    margin-bottom: 10px; /* margin inferior */
+    border: 1px solid #ccc; /* borda */
+    border-radius: 5px; /* arredodamento de borda*/
 }
 
 .error-message {
@@ -203,4 +207,3 @@ form button:hover {
 p {
     margin-bottom: 10px;
 }
-
