@@ -15,8 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 import java.util.Optional;
 
-@Controller
-@RequestMapping("/tarefas")
+@Controller // Anotação que define que esta classe é um controlador
+@RequestMapping("/tarefas") // Mapeia URLs que começam com "/tarefas" para este controlador.
 public class HomeController {
 
     @Autowired
@@ -24,21 +24,22 @@ public class HomeController {
 
     @Autowired
     private TarefaValidator tarefaValidator;
-
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
+    // Anotação que indica ao Spring para injetar instâncias de TarefaRepository e TarefaValidator automaticamente.
+    
+    @InitBinder // @InitBinder = Método que é chamado para inicializar o binder que realiza a vinculação de dados da web.
+    protected void initBinder(WebDataBinder binder) {  // WebDataBinder = Interface que permite a personalização da vinculação de dados da web.
         binder.setValidator(tarefaValidator);
     }
 
     @GetMapping
-    public String listarTarefas(Model model) {
-        List<Tarefa> tarefas = tarefaRepository.findAll();
+    public String listarTarefas(Model model) {  //model É um Objeto do tipo Model usado para passar dados para a visualização.
+        List<Tarefa> tarefas = tarefaRepository.findAll(); // tarefas É uma lista de objetos do tipo Tarefa que contém todas as tarefas recuperadas do banco de dados.
         model.addAttribute("tarefas", tarefas);
         return "home/projeto-tarefas/index";
     }
 
     @GetMapping("/new")
-    public String cadastrarTarefaPage(Model model) {
+    public String cadastrarTarefaPage(Model model) { //model É um Objeto do tipo Model usado para passar dados para a visualização.
         model.addAttribute("tarefa", new Tarefa());
         return "home/projeto-tarefas/cadastrar-tarefa";
     }
