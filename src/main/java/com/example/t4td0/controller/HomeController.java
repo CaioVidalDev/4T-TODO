@@ -65,7 +65,7 @@ public class HomeController {
         }
     }
 
-    @PostMapping("/edit")
+    @PutMapping("/edit")
     public String editarTarefa(@Validated @ModelAttribute Tarefa tarefa, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "home/projeto-tarefas/editar-tarefa";
@@ -86,7 +86,7 @@ public class HomeController {
         }
     }
 
-    @PostMapping("/{id}/destroy")
+    @DeleteMapping("/{id}/destroy")
     public String excluirTarefa(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
         tarefaRepository.deleteById(id);
         redirectAttributes.addFlashAttribute("exclusaoSucesso", true);

@@ -17,7 +17,7 @@
 <body>
     <div class="container" id="editar-tarefa">
         <h1>Editar Tarefa</h1>
-        <form action="/tarefas/edit" method="post" th:object="${tarefa}">
+        <form action="/tarefas/edit" method="post" th:object="${tarefa}" th:method="put">
             <label for="novo-titulo">Novo Título da Tarefa:</label>
             <input type="hidden" id="id" name="id" th:value="*{id}" readonly>
             <input type="text" id="novo-titulo" name="titulo" th:field="*{titulo}">
@@ -35,4 +35,3 @@
     </div>
 </body>
 </html>
-

@@ -19,7 +19,7 @@
 <body>
     <div class="container" id="excluir-tarefa">
         <h1>Excluir Tarefa</h1>
-        <form th:action="@{'/tarefas/' + ${tarefa.id} + '/destroy'}" method="post">
+        <form th:action="@{'/tarefas/' + ${tarefa.id} + '/destroy'}" th:method="delete">
             <p>Título: <span th:text="${tarefa.titulo}"></span></p>
             <input type="hidden" id="id" name="id" th:value="${tarefa.id}">
             <p>Tem certeza que deseja excluir a tarefa?</p>
