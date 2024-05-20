@@ -76,10 +76,12 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
     - **Java** com:
     - **Spring Boot**:
         - **Thymeleaf**
+        - **Data JPA**
         - **Spring web**
         - **Devtools**
         - **Test**
-        - **Hibernate**
+        - **Selenium**
+        - **Web Driver Manager**
     - **Maven**
         
 - **Frontend**:
@@ -196,6 +198,11 @@ $ mvn spring-boot:run
 
 ---
 ## 🛠 Testes Automatizados
+
+### Pré-requisitos
+
+Antes de começar, você precisa limpar a lista de tarefas para uma boa execução dos testes automatizados.
+---
 
 #### Iniciando Testes Automatizados (terminal)
 ```bash
