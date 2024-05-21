@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Tarefa</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala de visualização -->
+    <title>Editar Tarefa</title> <!-- Titulo da página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Linkando arquivo CSS -->
     <style>
         .mensagem {
             color: green; /* cor do texto */
@@ -15,23 +15,23 @@
     </style>
 </head>
 <body>
-    <div class="container" id="editar-tarefa">
-        <h1>Editar Tarefa</h1>
-        <form action="/tarefas/edit" method="post" th:object="${tarefa}" th:method="patch">
-            <label for="novo-titulo">Novo Título da Tarefa:</label>
-            <input type="hidden" id="id" name="id" th:value="*{id}" readonly>
-            <input type="text" id="novo-titulo" name="titulo" th:field="*{titulo}">
+    <div class="container" id="editar-tarefa"> <!-- Contanier para Editar Tarefas -->
+        <h1>Editar Tarefa</h1> <!-- Titulo -->
+        <form action="/tarefas/edit" method="post" th:object="${tarefa}" th:method="put"> <!-- Campo para editar tarefa -->
+            <label for="novo-titulo">Novo Título da Tarefa:</label> <!-- Nome pro campo -->
+            <input type="hidden" id="id" name="id" th:value="*{id}" readonly> <!-- Campo oculto para ID da tarefa -->
+            <input type="text" id="novo-titulo" name="titulo" th:field="*{titulo}">  <!-- Campo para colocar/editar novo titulo da tarefa -->
             <div th:if="${#fields.hasErrors('titulo')}" class="error-message" th:errors="*{titulo}">
-                Título é obrigatório
+                Título é obrigatório <!-- Aparece uma mensagem de erro se o título nao for colocado ou vazio -->
             </div>
-            <button id="salvarEdit" type="submit">Salvar Alterações</button>
+            <button id="salvarEdit" type="submit">Salvar Alterações</button> <!-- Botao para salvar edição -->
         </form>
 
         <div th:if="${edicaoSucesso}" id="mensagemEditSucess" class="mensagem">
-            Tarefa editada com sucesso!
+            Tarefa editada com sucesso! <!-- Aparece uma mensagem de sucesso ao editar tarefa -->
         </div>
 
-        <a href="/tarefas" class="btn-voltar">Voltar</a>
+        <a href="/tarefas" class="btn-voltar">Voltar</a> <!-- link para voltar a lista de tarefas -->
     </div>
 </body>
 </html>

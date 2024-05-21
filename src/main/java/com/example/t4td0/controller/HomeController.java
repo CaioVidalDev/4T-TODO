@@ -65,7 +65,7 @@ public class HomeController {
         }
     }
 
-    @PatchMapping("/edit") // Realiza requisições de atualizar
+    @PutMapping("/edit") // Realiza requisições de atualizar
     public String editarTarefa(@Validated @ModelAttribute Tarefa tarefa, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) { // Verifica se tem erro de validação
             return "home/projeto-tarefas/editar-tarefa"; // Retorna ao HTML de editar

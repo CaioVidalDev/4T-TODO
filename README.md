@@ -75,11 +75,12 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 - **Backend**:
     - **Java** com:
     - **Spring Boot**:
-        - **Thymeleaf**
-        - **Data JPA**
-        - **Spring web**
-        - **Devtools**
-        - **Test**
+        - **Spring MVC**
+        - **Spring Thymeleaf**
+        - **Spring Data JPA**
+        - **Spring Web**
+        - **Spring Devtools**
+        - **Spring Test**
         - **Selenium**
         - **Web Driver Manager**
     - **Maven**
@@ -118,6 +119,40 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 - **java adoptopenjdk-21.0.1+12.0.LTS**
 - **maven 3.9.6**
+---
+
+#### Instalação do java adoptopenjdk-21.0.1+12.0.LTS (Linux)
+
+```bash
+
+# Adicionando o plugin do Java ao asdf
+asdf plugin-add java 
+
+# Instalando uma versão específica do Java
+asdf install java adoptopenjdk-21.0.1+12.0.LTS 
+
+# Definindo a versão local do Java
+asdf local java adoptopenjdk-21.0.1+12.0.LTS 
+
+# Versão do Java instalada
+java -version 
+```
+#### Instalação do maven 3.9.6 (Linux)
+
+```bash
+
+# Adicionando o plugin do Maven ao asdf
+asdf plugin-add maven 
+ 
+# Instalando uma versão específica do Maven
+asdf install maven 3.9.6 
+ 
+# Definindo a versão local do Maven
+asdf local maven 3.9.6 
+
+# Versão do Maven instalada
+mvn -v 
+```
 
 ---
 
@@ -142,7 +177,6 @@ $ HTTPS: git clone https://caiovidal4t@bitbucket.org/caio-vidal-silva/t4td0.git
 $ mvn spring-boot:run
 
 # O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas
-
 ```
 ---
 <p align="center">
@@ -150,7 +184,7 @@ $ mvn spring-boot:run
 </p>
 
 ---
-#### Iniciando e Parametrizando o Banco de Dados (sqlite e dbeaver)
+#### Iniciando e Configurando o Banco de Dados (sqlite e dbeaver)
 
 ```bash
 
@@ -171,7 +205,6 @@ $ t4td0/src/main/resources/application.properties
 
 # Altere o caminho do banco 
 $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sqlite
-
 ```
 ---
 <p align="center">
@@ -189,7 +222,6 @@ $ mvn spring-boot:run
 # Abra seu navegador 
 
 # O servidor inciará na porta 8080 - acesse http://localhost:8080/tarefas
-
 ```
 ---
 <p align="center">
@@ -199,8 +231,10 @@ $ mvn spring-boot:run
 ---
 ## 🛠 Testes Automatizados
 
-### Pré-requisitos
+Os testes automatizados são de grande importância para o processo de construção de software visto que ajudam a reduzir o tempo de realização dos testes que são feitos manualmente proporcionando velocidade e fluidez ao processo de validação. Em outras palavras, esta abordagem viabiliza a execução dos testes de forma rápida e com uma cobertura maior do sistema, quando empregada de forma correta.
 
+### Pré-requisitos
+---
 Antes de começar, você precisa limpar a lista de tarefas para uma boa execução dos testes automatizados.
 ---
 

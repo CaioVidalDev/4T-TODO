@@ -5,35 +5,35 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+@Entity // Classe é uma entidade JPA
 public class Tarefa {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // ID é uma chave primária
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Geração do ID
     private Long id;
 
-    private String titulo;
+    private String titulo; // Titulo da tarefa
 
-    public Tarefa() {
+    public Tarefa() { // Construtor
     }
 
-    public Tarefa(String titulo) {
-        this.titulo = titulo;
+    public Tarefa(String titulo) { // Construtor que incia o título da tarefa
+        this.titulo = titulo; 
     }
 
-    public Long getId() {
+    public Long getId() { // Getter para o ID
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id) { // Setter para o ID
         this.id = id;
     }
 
-    public String getTitulo() {
+    public String getTitulo() { // Getter para o Titulo
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
+    public void setTitulo(String titulo) { // Setter para o Titulo
         this.titulo = titulo;
     }
 }

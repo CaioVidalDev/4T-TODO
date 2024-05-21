@@ -13,53 +13,53 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CadastroTest {
 
-    private static WebDriver driver;
+    private static WebDriver driver; // variavel driver do tipo WebDriver
 
-    @BeforeAll
-    public static void setUp() {
-        WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options = new FirefoxOptions();
-        driver = new FirefoxDriver(options);
+    @BeforeAll // Executar o método abaixo antes de todos os testes
+    public static void setUp() { // Configuração
+        WebDriverManager.firefoxdriver().setup(); // Configura o driver do Firefox
+        FirefoxOptions options = new FirefoxOptions(); // Opções do Firefox
+        driver = new FirefoxDriver(options); // Inicializa o driver com o Firefox 
     }
 
     @SuppressWarnings("deprecation")
-    @Test
-    public void testCadastroTarefa() {
-        driver.get("http://localhost:8080/tarefas");
+    @Test // Metodo Teste
+    public void testCadastroTarefa() { // Teste para cadastro de tarefa
+        driver.get("http://localhost:8080/tarefas"); // Abrir a pagina de lista de tarefas
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Tempo de espera de 10 segundos para inicializar
 
-       WebElement cadastrar = driver.findElement(By.className("btn-voltar"));
-       cadastrar.click();
+       WebElement cadastrar = driver.findElement(By.className("btn-voltar")); // Encontrar o botao de cadastrar tarefa
+       cadastrar.click(); // Clicar no botao
 
-       WebElement caixaDeBusca = driver.findElement(By.id("titulo-cadastro"));
-       caixaDeBusca.click();
-       caixaDeBusca.sendKeys("Teste De Cadastrar");
+       WebElement caixaDeBusca = driver.findElement(By.id("titulo-cadastro")); // Encontra a caixa de texto 
+       caixaDeBusca.click(); // Clica na caixa de texto
+       caixaDeBusca.sendKeys("Teste De Cadastrar"); // Digita "Teste De Cadastrar"
 
-       WebElement salvarCadastro = driver.findElement(By.id("salvarCadastro"));
-       salvarCadastro.click();
+       WebElement salvarCadastro = driver.findElement(By.id("salvarCadastro")); // Encontra o botão de salvar cadastro
+       salvarCadastro.click(); // Clica no botão
 
-       WebElement voltar = driver.findElement(By.className("btn-voltar"));
-       voltar.click();
+       WebElement voltar = driver.findElement(By.className("btn-voltar")); // Encontra o botão de voltar
+       voltar.click(); // Clica no botão de voltar
 
        /* Tarefa Cadastrada com Sucesso */
-       WebElement cadastroSucesso = driver.findElement(By.className("tarefa-nome"));
-       String TarefaCadastroSucess = cadastroSucesso.getText();
+       WebElement cadastroSucesso = driver.findElement(By.className("tarefa-nome")); // Encontra o campo da tarefa cadastrada
+       String TarefaCadastroSucess = cadastroSucesso.getText(); // Recebe o texto da tarefa
        
-       if(TarefaCadastroSucess.contains("Teste De Cadastrar")) {
-        System.out.println("Teste de cadastrar tarefa realizado com sucesso");
+       if(TarefaCadastroSucess.contains("Teste De Cadastrar")) { // Se no texto contem "Teste De Cadastrar"
+        System.out.println("Teste de cadastrar tarefa realizado com sucesso"); // Aparece essa mensagem
         }else{
-         System.out.println("Erro na Pesquisa");
+         System.out.println("Erro na Pesquisa"); // Aparece essa mensagem
         }
 
         /* Excluir Tarefa */
-        WebElement excluir = driver.findElement(By.className("btn-excluir"));
-       excluir.click();
+        WebElement excluir = driver.findElement(By.className("btn-excluir")); // Encontrar botao para ir a exclusao da tarefa
+       excluir.click(); // Clicar no botao
 
-       WebElement excluirSim = driver.findElement(By.className("btn-sim"));
-       excluirSim.click();
+       WebElement excluirSim = driver.findElement(By.className("btn-sim")); // Encontrar botao para SIM para excluir a tarefa
+       excluirSim.click(); // Clicar no botao
 
-       driver.close();
+       driver.close(); // Fechar navegador
 
     }
 }
