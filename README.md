@@ -69,6 +69,20 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 
 ---
 
+## 🚨 Validação
+
+1. Mensagem de erro ao tentar cadastrar uma nova tarefa com um titulo nulo ou vazio
+<p align="center">
+  <img alt="MessageErrorNew" title="MessageErrorNew" src="assets/MessageErrorNew.png" width="100px">
+</p>
+
+2. Mensagem de erro ao tentar editar uma tarefa com um titulo nulo ou vazio
+<p align="center">
+  <img alt="MessageErrorEdit" title="MessageErrorEdit" src="assets/MessageErrorEdit.png" width="100px">
+</p>
+
+---
+
 ## 🛠 Tecnologias
 
 
@@ -80,6 +94,7 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
         - **Spring Data JPA**
         - **Spring Web**
         - **Spring Devtools**
+        - **Spring Validation**
         - **Spring Test**
         - **Selenium**
         - **Web Driver Manager**

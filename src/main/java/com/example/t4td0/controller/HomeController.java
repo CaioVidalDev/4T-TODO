@@ -6,6 +6,7 @@ import com.example.t4td0.repository.TarefaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -34,7 +35,7 @@ public class HomeController {
     }
 
     @PostMapping("/new") // Realiza requisições de adicionar
-    public String cadastrarTarefa(@Validated @ModelAttribute("tarefa") RecordDto tarefaDto, RedirectAttributes redirectAttributes) {
+    public String cadastrarTarefa(@Validated @ModelAttribute("tarefa") RecordDto tarefaDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
        
         if (tarefaDto.titulo().isEmpty() || tarefaDto.titulo() == null) { // Verifica se o titulo está vazio ou nulo
             redirectAttributes.addFlashAttribute("tituloVazio", true); // Indica que o titulo está vazio
@@ -60,7 +61,7 @@ public class HomeController {
     }
 
     @PutMapping("/{id}/edit") // Realiza requisições de atualização
-    public String editarTarefa(@PathVariable("id") Long id, @Validated @ModelAttribute("tarefa") RecordDto tarefaDto, RedirectAttributes redirectAttributes) {
+    public String editarTarefa(@PathVariable("id") Long id, @Validated @ModelAttribute("tarefa") RecordDto tarefaDto,BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         
         if (tarefaDto.titulo().isEmpty() || tarefaDto.titulo() == null) { // Verifica se o titulo está vazio ou nulo
             redirectAttributes.addFlashAttribute("tituloVazio", true); // Indica que o titulo está vazio
