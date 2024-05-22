@@ -15,23 +15,26 @@
     </style>
 </head>
 <body>
-    <div class="container" id="editar-tarefa"> <!-- Contanier para Editar Tarefas -->
+    <div class="container" id="editar-tarefa"> <!-- Container para Editar Tarefas -->
         <h1>Editar Tarefa</h1> <!-- Titulo -->
-        <form action="/tarefas/edit" method="post" th:object="${tarefa}" th:method="put"> <!-- Campo para editar tarefa -->
+        <form th:action="@{'/tarefas/' + ${id} + '/edit'}" method="post" th:object="${tarefa}">
+            <input type="hidden" name="_method" value="put"/> <!-- importando metodo put (atualizar) -->
             <label for="novo-titulo">Novo Título da Tarefa:</label> <!-- Nome pro campo -->
-            <input type="hidden" id="id" name="id" th:value="*{id}" readonly> <!-- Campo oculto para ID da tarefa -->
-            <input type="text" id="novo-titulo" name="titulo" th:field="*{titulo}">  <!-- Campo para colocar/editar novo titulo da tarefa -->
-            <div th:if="${#fields.hasErrors('titulo')}" class="error-message" th:errors="*{titulo}">
-                Título é obrigatório <!-- Aparece uma mensagem de erro se o título nao for colocado ou vazio -->
+            <input type="hidden" id="id" name="id" th:value="${id}" readonly> <!-- Campo oculto para ID da tarefa -->
+            <input type="text" id="novo-titulo" name="titulo" th:field="*{titulo}"> <!-- Campo para colocar/editar novo titulo da tarefa -->
+            <div th:if="${tituloVazio}" class="error-message">
+                Título é obrigatório <!-- Aparece uma mensagem de erro se o título não for colocado ou vazio -->
             </div>
-            <button id="salvarEdit" type="submit">Salvar Alterações</button> <!-- Botao para salvar edição -->
+            
+            <button id="salvarEdit" type="submit">Salvar Alterações</button> <!-- Botão para salvar edição -->
         </form>
 
         <div th:if="${edicaoSucesso}" id="mensagemEditSucess" class="mensagem">
             Tarefa editada com sucesso! <!-- Aparece uma mensagem de sucesso ao editar tarefa -->
         </div>
 
-        <a href="/tarefas" class="btn-voltar">Voltar</a> <!-- link para voltar a lista de tarefas -->
+        <a href="/tarefas" class="btn-voltar">Voltar</a> <!-- link para voltar à lista de tarefas -->
     </div>
 </body>
 </html>
+
