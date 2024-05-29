@@ -39,7 +39,7 @@ public class MensagemCadastroErroTest {
        salvarCadastro.click(); // Clica no botao
 
        /* Mensagem de Erro de Cadastrado com Sucesso */
-       WebElement cadastroSucess = driver.findElement(By.id("mensagemErro")); // Encontra o campo de mensagem de erro
+       WebElement cadastroSucess = driver.findElement(By.className("error-message")); // Encontra o campo de mensagem de erro
        String mensagemCadastroSucess = cadastroSucess.getText(); // Recebe o texto 
        
        if(mensagemCadastroSucess.contains("Título é obrigatório")) { // Se no texto contem "Título é obrigatório"
