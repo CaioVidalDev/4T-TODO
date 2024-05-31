@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-T4td0Application<t4td0>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.t4td0.T4td0Application",
+            "projectName": "t4td0",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

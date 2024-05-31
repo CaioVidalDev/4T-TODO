@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala de visualização -->
+    <title>Excluir Tarefas</title> <!-- Titulo da página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Linkando arquivo CSS -->
+    <style>
+        #excluir-tarefa {
+            text-align: center; /* alinhar texto */
+        }
+
+        #excluir-tarefa p {
+            word-wrap: break-word; /* descer linha */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="excluir-tarefa"> <!-- Contanier para Excluir Tarefas -->
+        <h1>Excluir Tarefa</h1> <!-- Titulo -->
+        <form th:action="@{'/tarefas/' + ${tarefa.id} + '/destroy'}" th:method="delete"> <!-- Campo para excluir tarefa -->
+            <p>Título: <span th:text="${tarefa.titulo}"></span></p> <!-- Aparece o titulo que deseja excluir -->
+            <input type="hidden" id="id" name="id" th:value="${tarefa.id}"> <!-- Campo oculto para o ID da tarefa -->
+            <p>Tem certeza que deseja excluir a tarefa?</p> <!-- Mensagem de confirmação -->
+            <button class="btn-sim" type="submit">Sim</button> <!-- Botao para excluir tarefa -->
+            <a href="/tarefas" class="btn-nao">Não</a> <!-- Link para cancelar exclusao e voltar a lista de tarefas -->
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

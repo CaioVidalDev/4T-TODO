@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala de visualização -->
+    <title>Visualizar Tarefa</title> <!-- Titulo da página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Linkando arquivo CSS -->
+    <style>
+       
+        #visualizar-tarefa {
+            text-align: center; /* alinhar texto */
+        }
+
+        #visualizar-tarefa p {
+            word-wrap: break-word; /* descer linha */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Contanier para Visualizar Tarefas -->
+        <div id="visualizar-tarefa">
+            <h1>Visualizar Tarefa</h1> <!-- Titulo -->
+            <p>Título: <span id="visualizarTarefa" th:text="${tarefa.titulo}"></span></p> <!-- Aparece o titulo para visualização -->
+            <a href="/tarefas" class="btn-voltar">Voltar</a>  <!-- Link para ir a tela de Lista de Tarefas -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/* Geral */
+
+* {
+    margin: 0; /* margem */
+    padding: 0; /* gerar espaço */
+    box-sizing: border-box; /* inclusao de preenchimento e borda  */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* fonte familiar */
+    background-color: #f9f9f9; /* cor de fundo */
+}
+
+.container {
+    max-width: 800px; /* largura máxima */
+    margin: 20px auto; /* margem */
+    padding: 20px; /* espaço */
+    background-color: #fff; /* cor de fundo */
+    border-radius: 5px; /* arredondar bordar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* sombra */
+}
+
+h1 {
+    text-align: center; /* alinhamento do texto */
+    margin-bottom: 20px; /* margem inferior */
+}
+
+/* Lista de Tarefas */
+
+ul {
+    list-style: none; /* lista de estilos */
+}
+
+li { /* campo tarefa */
+    padding: 10px; /* gerar espaço */
+    border: 1px solid #ddd; /* borda ao redor da tarefa */
+    margin-bottom: 10px; /* margem inferior */
+    display: flex;  /* elementos organizados corretamente */
+    justify-content: space-between; /* alinhar itens horizontal */
+    align-items: center; /* alinhar itens vertical */
+}
+
+a {
+    text-decoration: none; /* decoração do texto */ /* tirar faixa inferior do link */
+    padding: 8px 16px; /* espaço */
+    border-radius: 5px; /* arredondar bordas */
+    font-weight: bold; /* fonte: negrito */
+    cursor: pointer; /* apontar o curso do mouse */
+}
+
+.btn-editar, .btn-excluir, .btn-visualizar {
+    background-color: transparent; /* cor de fundo */
+    border: 2px solid transparent; /* borda */
+    transition: all 0.3s ease; /* transição */
+}
+
+.btn-editar {
+    color: #f39c12; /* cor do texto */
+    border-color: #f39c12; /* cor da borda */
+}
+
+.btn-editar:hover {
+    background-color: #f39c12; /* cor de fundo */
+    color: #fff; /* cor do texto */
+}
+
+.btn-excluir {
+    color: #e74c3c; 
+    border-color: #e74c3c; 
+}
+
+.btn-excluir:hover {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-visualizar {
+    color: #3498db; 
+    border-color: #3498db; 
+}
+
+.btn-visualizar:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.btn-voltar {
+    display: block; /* elementos organizados corretamente */
+    margin-top: 20px; /* margem superior */
+    text-align: center; /* alinhar texto */
+    background-color: #95a5a6; /* cor de fundo */
+    color: #fff; /* cor do texto */
+    padding: 8px 16px; /* espaçamento */
+    border-radius: 5px; /* arredondamento da borda */
+    border: 2px solid #95a5a6; /* borda */
+    transition: all 0.3s ease; /* transição */
+}
+
+.btn-voltar:hover {
+    background-color: #7f8c8d; /* cor de fundo */
+    border-color: #7f8c8d; /* cor da borda */
+}
+
+/* Cadastrar Tarefa */
+
+form label {
+    display: block; /* elementos organizados corretamente */
+    margin-bottom: 5px; /* margem inferior */
+}
+
+form input {
+    width: 100%; /* largura */
+    padding: 8px; /* espaço */
+    margin-bottom: 10px; /* margem inferior */
+    border: 1px solid #ccc;/* borda */
+    border-radius: 5px; /* arredondamento de borda */
+}
+
+.error-message {
+    color: #e74c3c; /* cor do texto */
+    margin-bottom: 10px; /* margem inferior */
+}
+
+.sucess-mensage {
+    color: #2ecc71; /* cor do texto */
+    margin-bottom: 10px; /* margem inferior */
+}
+
+form button {
+    padding: 8px 16px; /* gerar espaço */
+    background-color: transparent; /* cor de fundo */
+    color: #2ecc71; /* cor do texto */
+    border: 2px solid #2ecc71; /* borda */
+    border-radius: 5px; /* arredondar borda */
+    cursor: pointer; /* cursor */
+    transition: all 0.3s ease; /* transição */
+}
+
+form button:hover {
+    background-color: #2ecc71; /* cor de fundo */
+    color: #fff; /* cor do texto */
+}
+
+/* Campo Editar e Visualizar ja esta atualizado com as alterações passadas */
+
+/* excluir */
+
+.btn-sim, .btn-nao {
+    padding: 8px 16px; /* gerar espaço */
+    margin-right: 10px; /* margem esquerda */
+    margin-top: 10px; /* margem superior */
+    border-radius: 5px; /* arredondar borda */
+    cursor: pointer; /* cursor */
+    transition: all 0.3s ease ; /* transição */
+}
+
+.btn-sim {
+    background-color: transparent; /* cor de fundo */
+    color: #2ecc71; /* cor de texto */
+    border: 2px solid #2ecc71;
+}
+
+.btn-sim:hover {
+    background-color: #2ecc71; /* cor de fundo */ 
+    color: #fff; /* cor do texto */
+}
+
+.btn-nao {
+    background-color: transparent; /* cor de fundo */
+    color: #e74c3c; /* cor de texto */
+    border: 2px solid #e74c3c; /* borda */
+}
+
+.btn-nao:hover {
+    background-color: #e74c3c; /* cor de fundo */
+    color: #fff; /* cor de texto */
+}
+

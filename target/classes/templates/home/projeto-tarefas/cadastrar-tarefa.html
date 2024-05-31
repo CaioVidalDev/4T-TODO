@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala de visualização -->
+    <title>Cadastrar Tarefas</title> <!-- Titulo da página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Linkando arquivo CSS -->
+    <style>
+        .mensagem {
+            color: green; /* cor do texto */
+        }
+        .error-message {
+            color: red; /* cor do texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Contanier para Cadastrar Tarefas -->
+        <h1>Cadastrar Tarefa</h1>  <!-- Titulo -->
+        <form action="/tarefas/new" method="post" th:object="${tarefa}"> <!-- Campo para cadastrar uma nova tarefa -->
+            <label for="titulo-cadastro">Título da Tarefa:</label> <!-- Nome pro campo -->
+            <input type="text" id="titulo-cadastro" name="titulo" th:field="*{titulo}"> <!-- Campo pata colocar titulo da tarefa -->
+            <div th:if="${tituloVazio}" class="error-message">
+                Título é obrigatório <!-- Aparece uma mensagem de erro se o título não for colocado ou vazio -->
+            </div>            
+            <button id= "salvarCadastro" type="submit">Salvar</button> <!-- Botão para salvar tarefa -->
+        </form>
+       
+        <div th:if="${cadastroSucesso}" id="mensagemCadastroSucess" class="mensagem">
+            Tarefa cadastrada com sucesso! <!-- Aparece uma mensagem de sucesso ao cadastrar nova tarefa -->
+        </div> 
+        <a href="/tarefas" class="btn-voltar">Voltar</a> <!-- link para voltar a lista de tarefas -->
+    </div>
+</body>
+</html>
+

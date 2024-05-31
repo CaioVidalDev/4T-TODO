@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala de visualização -->
+    <title>Lista de Tarefas</title> <!-- Titulo da página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Linkando arquivo CSS -->
+    <style>
+        .tarefa-item {
+            display: flex; /* elementos organizados corretamente */
+            align-items: center; /* alinhar itens */
+            justify-content: space-between;
+            margin-bottom: 10px; /* margem inferior */
+        }
+        .tarefa-item .tarefa-nome {
+            flex-grow: 1;
+            overflow: hidden; /* diminuir o texto */
+            text-overflow: ellipsis; /* colocado os tres pontos */
+            white-space: nowrap;
+            margin-right: 10px; /* coloca a margem 10px a direita */
+        }
+        .tarefa-item .btn-group { /* botoes */
+            display: flex; /* elementos organizados corretamente */
+            align-items: center; /* alinhar itens */
+        }
+        .tarefa-item .btn-group a { /* link */
+            margin-right: 10px; /* coloca a margem 10px a direita */
+        }
+        .mensagem-exclusao {
+            font-weight: bold; /* fonte */
+            color: green; /* cor de texto */
+            margin-bottom: 10px; /* margem inferior */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="projeto-tarefas"> <!-- Contanier para Lista de Tarefas -->
+        <h1>Lista de Tarefas</h1> <!-- Titulo -->
+        <div th:if="${exclusaoSucesso}" class="mensagem-exclusao">
+            Tarefa excluída com sucesso! <!-- Aparece uma mensagem de exclusão ao excluir tarefa -->
+        </div>
+        <ul id="lista-tarefas">
+            <li th:each="tarefa : ${tarefas}" class="tarefa-item"> <!-- Realiza a repetição de campo da tarefa para cada tarefa listada-->
+                <span class="tarefa-nome" th:text="${tarefa.titulo}"></span> <!-- Mostar o Texto/Titulo da Tarefa -->
+                <div class="btn-group">
+                    <a th:href="@{'/tarefas/' + ${tarefa.id}}" class="btn-visualizar">Visualizar</a> <!-- Link para ir a tela de Visualizar Tarefa -->
+                    <a th:href="@{'/tarefas/' + ${tarefa.id} + '/edit'}" class="btn-editar">Editar</a> <!-- Link para ir a tela de Editar Tarefa -->
+                    <a th:href="@{'/tarefas/' + ${tarefa.id} + '/destroy'}" class="btn-excluir">Excluir</a> <!-- Link para ir a tela de Excluir Tarefa -->
+                </div>
+            </li>
+        </ul>
+        <a href="/tarefas/new" class="btn-voltar">Cadastrar Tarefa</a> <!-- Link para ir a tela de Cadastrar Tarefa -->
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

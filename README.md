@@ -7,7 +7,7 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 
 ---
 <p align="center">
-  <img alt="4t" title="4t" src="assets/4t.png" width="100px">
+  <img alt="4t" title="4t" src="assets/4t.png" width="1000px">
 </p>
 
 ---
@@ -39,32 +39,32 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 
 1. Lista de Tarefas
 <p align="center">
-  <img alt="ListaInicial" title="ListaInicial" src="assets/ListaIncial.png" width="100px">
+  <img alt="ListaInicial" title="ListaInicial" src="assets/ListaIncial.png" width="801000px0px">
 </p>
 
 2. Cadastro de Tarefas
 <p align="center">
-  <img alt="Cadastro" title="Cadastro" src="assets/Cadastro.png" width="100px">
+  <img alt="Cadastro" title="Cadastro" src="assets/Cadastro.png" width="1000px">
 </p>
 
 3. Visualizar Tarefas
 <p align="center">
-  <img alt="Visualizar" title="Visualizar" src="assets/Visualizar.png" width="100px">
+  <img alt="Visualizar" title="Visualizar" src="assets/Visualizar.png" width="1000px">
 </p>
 
 4. Editar Tarefas
 <p align="center">
-  <img alt="Editar" title="Editar" src="assets/Editar.png" width="100px">
+  <img alt="Editar" title="Editar" src="assets/Editar.png" width="1000px">
 </p>
 
 5. Excluir Tarefas
 <p align="center">
-  <img alt="Excluir" title="Excluir" src="assets/Excluir.png" width="100px">
+  <img alt="Excluir" title="Excluir" src="assets/Excluir.png" width="1000px">
 </p>
 
 6. Lista de Tarefas Cadastradas
 <p align="center">
-  <img alt="ListaDeTarefasCompleta" title="ListaDeTarefasCompleta" src="assets/ListaDeTarefasCompleta.png" width="100px">
+  <img alt="ListaDeTarefasCompleta" title="ListaDeTarefasCompleta" src="assets/ListaDeTarefasCompleta.png" width="1000px">
 </p>
 
 ---
@@ -73,12 +73,12 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 
 1. Mensagem de erro ao tentar cadastrar uma nova tarefa com um titulo nulo ou vazio
 <p align="center">
-  <img alt="MessageErrorNew" title="MessageErrorNew" src="assets/MessageErrorNew.png" width="100px">
+  <img alt="MessageErrorNew" title="MessageErrorNew" src="assets/MessageErrorNew.png" width="1000px">
 </p>
 
 2. Mensagem de erro ao tentar editar uma tarefa com um titulo nulo ou vazio
 <p align="center">
-  <img alt="MessageErrorEdit" title="MessageErrorEdit" src="assets/MessageErrorEdit.png" width="100px">
+  <img alt="MessageErrorEdit" title="MessageErrorEdit" src="assets/MessageErrorEdit.png" width="1000px">
 </p>
 
 ---
@@ -96,6 +96,7 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
         - **Spring Devtools**
         - **Spring Validation**
         - **Spring Test**
+        - **API RESTful**
         - **Selenium**
         - **Web Driver Manager**
     - **Maven**
@@ -112,6 +113,58 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
 
 ---
 
+## ⚙️ API RESTful
+
+A API RESTful é uma interface que dois sistemas de computador usam para trocar informações de forma segura pela internet. A maioria das aplicações de negócios precisa se comunicar com outras aplicações internas e de terceiros para executar várias tarefas.
+
+---
+### REST 
+
+REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos, especialmente para aplicações web. Ele define um conjunto de restrições para criar serviços web escaláveis e de fácil manutenção.
+
+### API REST 
+é uma API que adere aos princípios REST. Ela permite que diferentes sistemas se comuniquem de maneira padronizada e eficiente. A API REST normalmente opera sobre o protocolo HTTP e usa métodos HTTP para realizar operações CRUD (Create, Read, Update, Delete) em recursos.
+
+---
+
+## 💻 HTTP
+
+HTTP (Hypertext Transfer Protocol) é o protocolo subjacente utilizado pela World Wide Web. Ele define como mensagens são formatadas e transmitidas, e como servidores e navegadores web devem responder a vários comandos.
+
+---
+## 📃 CRUD
+
+CRUD é um acrônimo para as quatro operações básicas de persistência de dados:
+
+    Create (Criar): Adicionar novos dados.
+    Read (Ler): Recuperar dados existentes.
+    Update (Atualizar): Modificar dados existentes.
+    Delete (Excluir): Remover dados existentes
+
+---
+### Relacionamento entre HTTP e REST
+REST usa HTTP como protocolo de comunicação. As operações de um serviço RESTful são mapeadas para os métodos HTTP.
+Métodos HTTP e seus Usos em REST:
+
+    GET:
+        Função: Recuperar dados do servidor.
+        Exemplo: GET /tarefas - Obtém uma lista de todas as tarefas.
+
+    POST:
+        Função: Enviar dados ao servidor para criar um novo recurso.
+        Exemplo: POST /tarefas - Cria uma nova tarefa com os dados fornecidos.
+
+    PUT:
+        Função: Atualizar um recurso existente com os dados fornecidos.
+        Exemplo: PUT /tarefas/{id} - Atualiza a tarefa com o ID especificado.
+
+    DELETE:
+        Função: Excluir um recurso existente.
+        Exemplo: DELETE /tarefas/{id} - Exclui a tarefa com o ID especificado.
+
+    
+
+---
 ## 🛣️ Como executar o projeto
 
 Este projeto é divido em três partes:
@@ -195,7 +248,7 @@ $ mvn spring-boot:run
 ```
 ---
 <p align="center">
-  <img alt="run" title="run" src="assets/run.png" width="100px">
+  <img alt="run" title="run" src="assets/run.png" width="1000px">
 </p>
 
 ---
@@ -223,7 +276,7 @@ $ spring.datasource.url=jdbc:sqlite:/home/caiovidal/Workspaces/t4td0/database.sq
 ```
 ---
 <p align="center">
-  <img alt="Dbeaver" title="run" src="assets/Dbeaver.png" width="100px">
+  <img alt="Dbeaver" title="run" src="assets/Dbeaver.png" width="1000px">
 </p>
 
 ---
@@ -240,7 +293,7 @@ $ mvn spring-boot:run
 ```
 ---
 <p align="center">
-  <img alt="Localhost" title="Localhost" src="assets/Localhost.png" width="100px">
+  <img alt="Localhost" title="Localhost" src="assets/Localhost.png" width="1000px">
 </p>
 
 ---
@@ -277,7 +330,7 @@ $ Data e Hora
 ---
 
 <p align="center">
-  <img alt="Localhost" title="Localhost" src="assets/TestesAutomatizados.png" width="100px">
+  <img alt="Localhost" title="Localhost" src="assets/TestesAutomatizados.png" width="1000px">
 </p>
 
 ---

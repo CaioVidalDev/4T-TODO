@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- Codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala de visualização -->
+    <title>Editar Tarefa</title> <!-- Titulo da página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Linkando arquivo CSS -->
+    <style>
+        .mensagem {
+            color: green; /* cor do texto */
+        }
+        .error-message {
+            color: red; /* cor do texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="editar-tarefa"> <!-- Container para Editar Tarefas -->
+        <h1>Editar Tarefa</h1> <!-- Titulo -->
+        <form th:action="@{'/tarefas/' + ${id} + '/edit'}" method="post" th:object="${tarefa}">
+            <input type="hidden" name="_method" value="put"/> <!-- importando metodo put (atualizar) -->
+            <label for="novo-titulo">Novo Título da Tarefa:</label> <!-- Nome pro campo -->
+            <input type="hidden" id="id" name="id" th:value="${id}" readonly> <!-- Campo oculto para ID da tarefa -->
+            <input type="text" id="novo-titulo" name="titulo" th:field="*{titulo}"> <!-- Campo para colocar/editar novo titulo da tarefa -->
+            <div th:if="${tituloVazio}" class="error-message">
+                Título é obrigatório <!-- Aparece uma mensagem de erro se o título não for colocado ou vazio -->
+            </div>
+            
+            <button id="salvarEdit" type="submit">Salvar Alterações</button> <!-- Botão para salvar edição -->
+        </form>
+
+        <div th:if="${edicaoSucesso}" id="mensagemEditSucess" class="mensagem">
+            Tarefa editada com sucesso! <!-- Aparece uma mensagem de sucesso ao editar tarefa -->
+        </div>
+
+        <a href="/tarefas" class="btn-voltar">Voltar</a> <!-- link para voltar à lista de tarefas -->
+    </div>
+</body>
+</html>
+
