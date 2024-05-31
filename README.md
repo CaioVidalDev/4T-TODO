@@ -109,6 +109,14 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
     - **SQL** com:
         - **SQLite**
         - **Dbeaver**
+- **Sistema Operacional**:
+    - **Linux** com:
+        - **Fedora**
+- **Sistema de Controle de Versão**:
+    - **Git** com:
+        - **Bitbucket**
+        - **Github**
+
 
 
 ---
