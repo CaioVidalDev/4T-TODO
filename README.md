@@ -102,7 +102,7 @@ O 4T Todo trata-se de um projeto template para estágiarios da 4T Soluções se 
     - **Maven**
         
 - **Frontend**:
-    - **Java** com:
+    - **Web** com:
         - **HTML5**
         - **CSS3**
 - **Banco de Dados**:
